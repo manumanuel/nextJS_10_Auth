@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import classes from "./auth-form.module.css";
 
 async function createUser(email, password) {
-  const response = fetch("/api/auth/signup", {
+  const response = await fetch("/api/auth/signup", {
     method: "POST",
     body: JSON.stringify({
       email,
@@ -31,18 +31,18 @@ function AuthForm() {
   async function submitHandler(event) {
     event.preventDefault();
     if (isLogin) {
-           // Add your login logic here
-    }{
+      // Add your login logic here
+    } else {
       const enteredEmail = emailInputRef.current.value;
       const enteredPassword = passwordInputRef.current.value;
 
       // Add your signup logic here
-    try { 
-      const result = await createUser(enteredEmail, enteredPassword);
-      console.log(result);
-    }
-    catch(error){
-      throw new Error(error.message || "Something went wrong!");
+      try {
+        const result = await createUser(enteredEmail, enteredPassword);
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
