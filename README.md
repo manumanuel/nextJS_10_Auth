@@ -20,9 +20,14 @@
   eg: JWT tokens
 
 ### jwt tokens
-     
+
 - main parts
 
 1. Issuer data [automatically added]
 2. Custom data [user data]
 3. Secret signing key
+
+### Add package
+
+- next-auth [npm install next-auth]
+- for encryption and checking add package bcryptjs [npm install bcryptjs]
