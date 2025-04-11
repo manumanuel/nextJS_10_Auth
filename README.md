@@ -31,3 +31,22 @@
 
 - next-auth [npm install next-auth]
 - for encryption and checking add package bcryptjs [npm install bcryptjs]
+
+### useSession
+
+- import from 'next-auth/react'
+- retrieve session details using,
+  const { data: session, status } = useSession(); //v4
+
+  - second parameter 'status' has 3 states
+
+  1. loading 2. authenticated 3. unauthenticated
+
+  const [session, loading] = useSession(); //v3
+
+### getSession
+
+- can be imported in both client & server side code
+- call getSession() method to check session exist or not
+- in server-side, we can implement getServerSideProps to check the session, if there is no session exist, do a redirect instead of adding props as session.
+- by implementing this server-side logic we can avoid the page loading in client-side [client pages will flash and then move to the login page, if no session exist]

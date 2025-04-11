@@ -6,8 +6,8 @@ import classes from "./main-navigation.module.css";
 function MainNavigation() {
   //const [session, loading] = useSession();  //v3
   const { data: session, status } = useSession(); //v4
-  console.log(session);
-  console.log(status); // loading, authenticated, unauthenticated
+  // console.log(session);
+  //  console.log(status); // loading, authenticated, unauthenticated
 
   function logoutHandler() {
     signOut();
