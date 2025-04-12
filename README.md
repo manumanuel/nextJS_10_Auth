@@ -50,3 +50,7 @@
 - call getSession() method to check session exist or not
 - in server-side, we can implement getServerSideProps to check the session, if there is no session exist, do a redirect instead of adding props as session.
 - by implementing this server-side logic we can avoid the page loading in client-side [client pages will flash and then move to the login page, if no session exist]
+
+- we can prevent from redirecting to login page if the user in already login and authenticated. [implemented in Auth page]
+
+- by implementing sessionProvider in \_app.js, we can avoid the call to server for session if the user is already login & authenticated. ie we can pass the available session variable to the new requested page using this sessionProvider.
