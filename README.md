@@ -54,3 +54,5 @@
 - we can prevent from redirecting to login page if the user in already login and authenticated. [implemented in Auth page]
 
 - by implementing sessionProvider in \_app.js, we can avoid the call to server for session if the user is already login & authenticated. ie we can pass the available session variable to the new requested page using this sessionProvider.
+
+# manuelma -> 1-7
